@@ -1,0 +1,86 @@
+<!--I'm trying to make the button logic with study case of cart quantity in e-commerce-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button</title>
+  </head>
+  <body>
+    <h2 id="quantity"></h2>
+
+    <button onclick="alert('The item in your cart is: ' + cartQuantity)">
+      Show quantity
+    </button>
+    <button
+      onclick="
+        cartQuantity++;
+        updateQuantity();
+      "
+    >
+      Add item
+    </button>
+    <button
+      onclick="
+        cartQuantity += 2;
+        updateQuantity();
+      "
+    >
+      +2
+    </button>
+    <button
+      onclick="
+        cartQuantity += 3;
+        updateQuantity();
+      "
+    >
+      +3
+    </button>
+    <button
+      onclick="
+        if (cartQuantity == 0) {
+          alert('Error! There is no item in your cart');
+        } else {
+          cartQuantity--;
+          updateQuantity();
+        }
+      "
+    >
+      -1
+    </button>
+    <button
+      onclick="
+        if (cartQuantity == 0) {
+          alert('Error! There is no item in your cart');
+        } else if (cartQuantity < 2) {
+          alert('Error! Your item must be greater than or equal to two.');
+        } else {
+          cartQuantity -= 2;
+          updateQuantity();
+        }
+      "
+    >
+      -2
+    </button>
+    <button
+      onclick="
+        cartQuantity = 0;
+        alert('Reset succeed');
+        updateQuantity();
+      "
+    >
+      reset cart
+    </button>
+
+    <script>
+      let cartQuantity = 0;
+
+      function updateQuantity() {
+        document.getElementById("quantity").innerHTML =
+          "Cart quantity: " + cartQuantity;
+      }
+
+      updateQuantity();
+    </script>
+  </body>
+</html>
