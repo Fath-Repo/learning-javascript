@@ -1,6 +1,6 @@
 // 1. get the data from the localstorage
 let taskList = JSON.parse(localStorage.getItem("taskList")) || [];
-
+    
 // 2. Catch form and keep the value inside of variables 
 const form = document.getElementById("formInput");
 const input = document.getElementById("listInput")
@@ -23,7 +23,7 @@ form.addEventListener("submit", function (event) {
 
     taskList.push(newTask);
 
-    localStorage.setItem("taskList", JSON.stringify(""))
+    localStorage.setItem("taskList", JSON.stringify(taskList));
 
     input.value = "";
 
@@ -37,7 +37,7 @@ function showTaskList() {
 
     taskList.forEach((item) => {
         const li = document.createElement("li");
-        li.textContent = item.nama;
+        li.textContent = item.name;
         ul.appendChild(li);
     });
 }
