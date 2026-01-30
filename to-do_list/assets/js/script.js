@@ -1,45 +1,45 @@
-// 1. get the data from the localstorage
-let taskList = JSON.parse(localStorage.getItem("taskList")) || [];
-    
-// 2. Catch form and keep the value inside of variables 
-const form = document.getElementById("formInput");
-const input = document.getElementById("listInput")
-const ul = document.getElementById("task-list")
+// 1. get the local storage if there is a local storage if not then make one
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
-// 3. make event submit form
-form.addEventListener("submit", function (event) {
-    event.preventDefault();
+// 2. Catch the dom element html
+const taskInput = document.getElementById("taskInput");
+const addButton = document.getElementById("add");
+const taskList = document.getElementById("taskList");
 
-    const taskName = input.value.trim();
+// 3. Show the task from existing localstorage
 
-    if (taskName === "") {
+tasks.forEach(task => showTask(task));
+
+
+//4. function to add task
+function addTask() {
+    const task = taskInput.value.trim();
+    document.getElementById("warning").innerHTML = "";
+
+    if (task === "") {
         document.getElementById("warning").innerHTML = "Task can't be empty"
         return;
     }
 
-    const newTask = {
-        name: taskName
-    };
+    tasks.push(task);
 
-    taskList.push(newTask);
+    localStorage.setItem("tasks", JSON.stringify(tasks));
 
-    localStorage.setItem("taskList", JSON.stringify(taskList));
+    showTask(task);
 
-    input.value = "";
+    taskInput.value = ""
 
-    showTaskList();
-
-})
-
-// 4. make function
-function showTaskList() {
-    ul.innerHTML = "";
-
-    taskList.forEach((item) => {
-        const li = document.createElement("li");
-        li.textContent = item.name;
-        ul.appendChild(li);
-    });
 }
 
-showTaskList();
+//5. show task on the ul element html 
+function showTask(task) {
+
+    const listItem = document.createElement("li");
+
+    listItem.textContent = task;
+
+    taskList.appendChild(listItem);
+}
+
+// 6. add even listener for the button
+addButton.addEventListener("click", addTask)
