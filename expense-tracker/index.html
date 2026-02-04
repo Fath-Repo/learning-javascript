@@ -19,7 +19,6 @@
     <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-3">
       <!--Left Column-->
       <div class="flex flex-col gap-3">
-
         <!--Form Card-->
         <div class="max-w-md bg-white p-6 rounded-xl shadow-lg">
           <h2 class="text-2xl font-bold mb-6">Add Expense</h2>
@@ -95,29 +94,43 @@
 
         <!--Filter By Date-->
         <div class="max-w-md bg-white p-6 rounded-xl shadow-lg">
-            <h2 class="text-2xl font-bold mb-6">Filter By Date</h2>
+          <h2 class="text-2xl font-bold mb-6">Filter By Date</h2>
 
-            <form action="" class="grid grid-cols-2 gap-3">
-                <div>
-                    <label for="start" class="block text-sm font-medium mb-1">Start Date</label>
-                    <input type="date" placeholder="YYYY-MM-DD" class="border px-4 py-2 rounded-md w-full">
-                </div>
+          <form action="" class="grid grid-cols-2 gap-3">
+            <div>
+              <label for="start" class="block text-sm font-medium mb-1"
+                >Start Date</label
+              >
+              <input
+                type="date"
+                placeholder="YYYY-MM-DD"
+                class="border px-4 py-2 rounded-md w-full"
+              />
+            </div>
 
-                <div>
-                    <label for="end" class="block text-sm font-medium mb-1">End Date</label>
-                    <input type="date" placeholder="YYYY-MM-DD" class="border px-4 py-2 rounded-md w-full">
-                </div>
+            <div>
+              <label for="end" class="block text-sm font-medium mb-1"
+                >End Date</label
+              >
+              <input
+                type="date"
+                placeholder="YYYY-MM-DD"
+                class="border px-4 py-2 rounded-md w-full"
+              />
+            </div>
 
-                <div class="w-full bg-gray-200 px-4 py-2 rounded-lg flex items-center justify-center col-span-2">
-                    <button type="reset">Clear Filter</button>
-                </div>
-            </form>
+            <div
+              class="w-full bg-gray-200 px-4 py-2 rounded-lg flex items-center justify-center col-span-2"
+            >
+              <button type="reset">Clear Filter</button>
+            </div>
+          </form>
         </div>
 
         <!--Summary-->
         <div class="max-w-md bg-white p-6 rounded-xl shadow-lg">
-            <h2 class="text-2xl font-bold mb-6">Summary</h2>
-            <p>Total: </p>
+          <h2 class="text-2xl font-bold mb-6">Summary</h2>
+          <p>Total:</p>
         </div>
       </div>
 
