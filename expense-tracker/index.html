@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <!--Tailwind CSS-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+
+  <!--Title-->
+  <body class="p-5 bg-gray-50">
+    <div class="mb-5">
+      <h1 class="font-bold text-3xl mb-3">Expense Tracker</h1>
+      <p>Keep track of your spending</p>
+    </div>
+
+    <!--Main Grid-->
+    <div class="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-3">
+      <!--Left Column-->
+      <div class="flex flex-col gap-3">
+
+        <!--Form Card-->
+        <div class="max-w-md bg-white p-6 rounded-xl shadow-lg">
+          <h2 class="text-2xl font-bold mb-6">Add Expense</h2>
+
+          <form action="" class="space-y-5">
+            <div class="grid grid-cols-2 gap-4">
+              <!--Description-->
+              <div>
+                <label for="description" class="block text-sm font-medium mb-1"
+                  >Description</label
+                >
+                <input
+                  type="text"
+                  placeholder="e.g., Lunch"
+                  id="description"
+                  class="border px-4 py-2 rounded-md w-full"
+                />
+              </div>
+
+              <!--Price-->
+              <div>
+                <label for="price" class="block text-sm font-medium mb-1"
+                  >Price</label
+                >
+                <input
+                  type="number"
+                  placeholder="0.00"
+                  id="price"
+                  class="border px-4 py-2 rounded-md w-full"
+                />
+              </div>
+
+              <!--Category-->
+              <div>
+                <label for="category" class="block text-sm font-medium mb-1"
+                  >Category</label
+                >
+                <select
+                  name="category"
+                  id="category"
+                  class="border px-4 py-2 rounded-md w-full"
+                >
+                  <option value="Food & Dining">Food & Dining</option>
+                  <option value="Transportation">Transportation</option>
+                  <option value="Shopping">Shopping</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Bills & Utilities">Bills & Utilities</option>
+                  <option value="Healthcare">Healthcare</option>
+                  <option value="Others">Others</option>
+                </select>
+              </div>
+
+              <!--Date-->
+              <div>
+                <label for="date" class="block text-sm font-medium mb-1"
+                  >Date</label
+                >
+                <input
+                  type="date"
+                  placeholder="YYYY-MM-DD"
+                  class="border px-4 py-2 rounded-md w-full"
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-blue-500 px-4 py-2 rounded-lg text-white flex items-center justify-center col-span-2"
+              >
+                + Add Expense
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!--Filter By Date-->
+        <div class="max-w-md bg-white p-6 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold mb-6">Filter By Date</h2>
+
+            <form action="" class="grid grid-cols-2 gap-3">
+                <div>
+                    <label for="start" class="block text-sm font-medium mb-1">Start Date</label>
+                    <input type="date" placeholder="YYYY-MM-DD" class="border px-4 py-2 rounded-md w-full">
+                </div>
+
+                <div>
+                    <label for="end" class="block text-sm font-medium mb-1">End Date</label>
+                    <input type="date" placeholder="YYYY-MM-DD" class="border px-4 py-2 rounded-md w-full">
+                </div>
+
+                <div class="w-full bg-gray-200 px-4 py-2 rounded-lg flex items-center justify-center col-span-2">
+                    <button type="reset">Clear Filter</button>
+                </div>
+            </form>
+        </div>
+
+        <!--Summary-->
+        <div class="max-w-md bg-white p-6 rounded-xl shadow-lg">
+            <h2 class="text-2xl font-bold mb-6">Summary</h2>
+            <p>Total: </p>
+        </div>
+      </div>
+
+      <!--Table Data-->
+      <div class="max-w-full h-fit bg-white p-6 rounded-xl shadow-lg">
+        <p class="flex flex items-center justify-center">
+          No expenses yet. Add your first expense above!
+        </p>
+      </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
