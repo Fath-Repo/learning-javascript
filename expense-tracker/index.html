@@ -23,7 +23,7 @@
         <div class="max-w-md bg-white p-6 rounded-xl shadow-lg">
           <h2 class="text-2xl font-bold mb-6">Add Expense</h2>
 
-          <form action="" class="space-y-5">
+          <form action="" class="space-y-5" id="add-expense">
             <div class="grid grid-cols-2 gap-4">
               <!--Description-->
               <div>
@@ -78,8 +78,9 @@
                 >
                 <input
                   type="date"
-                  placeholder="YYYY-MM-DD"
                   class="border px-4 py-2 rounded-md w-full"
+                  max=""
+                  id="date-input"
                 />
               </div>
               <button
@@ -96,7 +97,7 @@
         <div class="max-w-md bg-white p-6 rounded-xl shadow-lg">
           <h2 class="text-2xl font-bold mb-6">Filter By Date</h2>
 
-          <form action="" class="grid grid-cols-2 gap-3">
+          <form action="" class="grid grid-cols-2 gap-3" id="date-filter">
             <div>
               <label for="start" class="block text-sm font-medium mb-1"
                 >Start Date</label
@@ -119,6 +120,10 @@
               />
             </div>
 
+            <div class="w-full bg-blue-500 px-4 py-2 rounded-lg text-white flex items-center justify-center col-span-2">
+              <button>Apply Filter</button>
+            </div>
+
             <div
               class="w-full bg-gray-200 px-4 py-2 rounded-lg flex items-center justify-center col-span-2"
             >
@@ -130,13 +135,13 @@
         <!--Summary-->
         <div class="max-w-md bg-white p-6 rounded-xl shadow-lg">
           <h2 class="text-2xl font-bold mb-6">Summary</h2>
-          <p>Total:</p>
+          <p id="total-price"></p>
         </div>
       </div>
 
       <!--Table Data-->
-      <div class="max-w-full h-fit bg-white p-6 rounded-xl shadow-lg">
-        <p class="flex flex items-center justify-center">
+      <div class="max-w-full h-fit bg-white p-6 rounded-xl shadow-lg" id="expenses-container">
+        <p class="flex flex items-center justify-center" id="empty-message">
           No expenses yet. Add your first expense above!
         </p>
       </div>
